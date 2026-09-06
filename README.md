@@ -262,4 +262,4 @@ It is also an experiment in how far I can take a project while working with AI a
 
 ## License
 
-This project is a personal development and learning project. More information about licensing and use will be added as the project approaches a public release.
+thie is no liscnese i hope no one steels it </3
