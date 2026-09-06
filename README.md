@@ -1,248 +1,265 @@
 # StrikePoint
 
-**StrikePoint** is a fast-paced browser-based shooting game designed for players who want to jump into quick rounds of action without needing to download or install a large game.
+StrikePoint is a browser-based, round-based tactical first-person shooter. The game is designed around short competitive matches, tactical gameplay, weapon management, and objective-based rounds.
 
-The project was created as a way for me to learn more about **programming, web development, game development, and AI-assisted coding**. Instead of writing every part of the project completely by myself, I experimented with a programming technique commonly known as **vibe coding**, where a developer works alongside an AI model to plan, create, debug, improve, and experiment with a project.
+StrikePoint was created as a personal project to help me understand the fundamentals of programming with AI assistance. The game takes inspiration from some of my favorite competitive shooters, particularly VALORANT and Counter-Strike 2. I used ideas from these games as a starting point for things such as round structure, team objectives, buying weapons, the HUD, the scoreboard, and tactical gameplay, while building my own implementation and systems.
 
-StrikePoint is both a game and a learning project. Throughout development, I used AI as a coding assistant while still making decisions about the game's features, design, mechanics, and overall direction.
+## About StrikePoint
 
+StrikePoint is built around a 5v5 tactical shooter format where the player fights alongside AI-controlled teammates and opponents.
 
-## About the Game
+The main tactical mode uses a round-based system. Depending on the player's selected side, the objective changes. Counter-Terrorists defend the site and attempt to stop the bomb from being planted or defuse it after it has been planted. Terrorists attempt to attack the site, plant the bomb, and protect it until it detonates.
 
-StrikePoint is built around the idea of keeping gameplay **simple, quick, and fun**.
+The game also includes other modes for players who want faster gameplay without the traditional bomb objective.
 
-The goal is to allow players to open the website, start a round, and immediately begin playing. The game focuses on shooting gameplay and quick reactions rather than requiring players to learn complicated controls or spend a long time setting up a match.
+Current game modes include:
 
-The project is designed to eventually run directly in a web browser, making it accessible without requiring players to download a traditional game launcher.
+* Tactical 5v5
+* Arena 2v2
+* Arena 5v5
 
-### Main Goals
+The arena modes focus more on direct firefights and respawning, while the tactical mode focuses on objectives, economy, positioning, and round management. The mode selection and round systems are implemented directly into the game.
 
-*  Quick shooting gameplay
-*  Fast rounds
-*  Play directly in a web browser
-*  Simple and accessible interface
-* Easy-to-understand gameplay
-*  Experiment with AI-assisted development
-*  Learn more about game and web programming
+## Gameplay
 
+The main gameplay loop is based around preparing for a round, purchasing equipment, fighting the opposing team, and completing the objective or eliminating the other team.
 
-#  Why I Made StrikePoint
+The tactical mode includes:
 
-I created StrikePoint primarily as a **learning project**.
+* 5v5 teams
+* Round-based matches
+* AI teammates and opponents
+* Bomb planting
+* Bomb defusing
+* Buy phase
+* Weapon purchases
+* In-game economy
+* Health and armor
+* Ammunition and reloads
+* Weapon switching
+* Weapon scopes
+* Kill rewards
+* Headshot tracking
+* Score tracking
+* Tactical radar
+* Round timer
+* Kill feed
+* Scoreboard
 
-One of my goals was to understand the fundamentals of using artificial intelligence as a programming partner. Rather than simply asking an AI to create an entire project and copying the result, I wanted to experiment with how a developer and an AI could work together throughout the development process.
+The game also has a freeze/buy phase before rounds begin, allowing players to purchase weapons and prepare for the upcoming round.
 
-During development, I used AI to help with things such as:
+## Weapons
 
-* Generating and improving code
-* Explaining programming concepts
-* Finding bugs
-* Debugging errors
-* Designing gameplay systems
-* Improving the user interface
-* Brainstorming new features
-* Optimizing existing code
-* Understanding unfamiliar programming concepts
-* Testing different approaches
+StrikePoint includes a weapon system with multiple weapon categories and weapon slots. Weapons can be purchased, equipped, switched between, reloaded, and used with different firing and aiming behaviors.
 
-This allowed me to learn from the development process while also building something that I could actually play and share with other people.
+The game also includes scoped weapons and a dedicated scope interface. Weapon ammunition is tracked using magazine and reserve ammunition, and the HUD updates based on the currently equipped weapon.
 
+## AI Opponents
 
+One of the main technical parts of StrikePoint is the AI-controlled players.
 
-#  AI Used During Development
+Instead of requiring multiple real players to test the game, StrikePoint uses AI-controlled teammates and opponents. This allows the game to function as a single-player experience while still maintaining the structure of a team-based shooter.
 
-I used two different AI models while developing StrikePoint.
+The AI players participate in the round simulation alongside the player, allowing the player to fight against and play alongside computer-controlled characters.
 
-## 1. DeepSeek V4 Flash
+## User Interface
 
-My primary AI model was **DeepSeek's DeepSeek V4 Flash**.
+The HUD was designed around the type of information that is important in a competitive FPS.
 
-I used this model for most of the development process, including helping with code generation, debugging, feature development, explanations, and brainstorming.
+During gameplay, the screen displays information including:
 
-DeepSeek acted as my primary coding assistant throughout the project.
+* Current team score
+* Round timer
+* Kill feed
+* Objective information
+* Ping
+* Ammunition
+* Current weapon
+* Health
+* Armor
+* Money
+* Kills
+* Headshots
+* Weapon slots
+* Radar
 
-## 2. Z.AI GLM-5.3-Flash
+The HUD also includes hit confirmation, kill confirmation, damage indicators, screen effects, and other feedback designed to make combat easier to understand.
 
-My secondary AI model was **Z.AI's GLM-5.3-Flash**.
+## Radar
 
-I used this model as an additional AI coding assistant. Having a second model allowed me to compare different solutions, ask for alternative approaches, and use another perspective when working on problems.
+StrikePoint includes a tactical radar positioned in the upper-right portion of the screen.
 
-Using multiple AI models was also part of the experiment behind the project. I wanted to see how different AI systems could contribute to the same development workflow.
+The radar is designed to give the player additional information about the current battlefield while keeping the main view focused on the action. It has its own visual frame and remains separate from the main HUD scaling.
 
----
+## Controls
 
-#  Development Approach
+The game uses standard FPS controls.
 
-StrikePoint was developed using an **AI-assisted programming workflow**.
+The default controls include:
 
-The development process generally involved:
+* W, A, S, D — Movement
+* Mouse — Aim
+* Left Mouse Button — Fire
+* Right Mouse Button — Aim or scope
+* Space — Jump
+* Ctrl — Crouch
+* Shift — Walk
+* R — Reload
+* Q — Switch weapon
+* E — Plant or defuse
+* B — Open buy menu
+* Tab — Scoreboard
+* F — Flashlight
+* Esc — Pause
 
-1. Coming up with a feature or idea
-2. Explaining the idea to an AI coding assistant
-3. Reviewing the generated code
-4. Testing the feature
-5. Finding problems or bugs
-6. Asking the AI for help fixing them
-7. Modifying the implementation
-8. Testing again
-9. Repeating the process until the feature worked properly
+The controls can also be rebound through the settings menu. The project stores its key bindings so that players can customize their controls.
 
-The important part of this process was that the AI was used as a **development partner**, rather than simply treating it as a tool that creates the entire project automatically.
+## Settings and Performance
 
-This project helped me better understand how AI can be integrated into a real programming workflow.
+StrikePoint includes a settings system that allows players to change different parts of the game.
 
----
+Settings currently include:
 
-#  Deployment
+* Mouse sensitivity
+* Field of view
+* Master volume
+* Crosshair gap
+* PC performance profile
+* Quality preset
+* FPS target
+* Dynamic performance mode
+* FPS counter
+* Retro pixel filter
+* Announcer voice
+* Ambient music
+* Custom key bindings
 
-StrikePoint is planned to be deployed as a web application so that players can access it through their browser.
+There are also different performance profiles for low-end PCs, mid-range PCs, high-end regular PCs, and high-end gaming PCs.
 
-For deployment, I plan to use **Render**.
+The goal of these profiles is to allow StrikePoint to run on a wider range of hardware instead of only targeting high-end gaming computers.
 
-Render will be responsible for hosting the application and making the game accessible online.
+## Visual Style
 
-The project source code will be stored on **GitHub**, which will allow me to:
+StrikePoint uses a dark tactical visual style with blue and orange team colors. The interface uses translucent panels, compact information displays, simple borders, and high-contrast text.
 
-* Keep track of the source code
-* Make changes to the project
-* Store different versions of the project
-* Manage updates
-* Share the project with others
-* Keep the code organized
-* Connect the project to the deployment platform
+The game also has a retro-inspired rendering option that uses a low-resolution rendering process and a pixel-style post-processing effect.
 
-The planned development workflow is:
+The visual direction is influenced by modern competitive FPS interfaces while also experimenting with a more stylized and lower-resolution appearance.
 
-**Code → GitHub → Render → Web Browser → Player**
+## AI-Assisted Development
 
----
+StrikePoint was developed using an AI-assisted programming approach.
 
-#  Project Structure
+I used AI as a coding partner throughout the development process. Instead of writing every part of the project completely manually, I used AI to help me create systems, understand code, debug problems, and experiment with different implementations.
 
-The project may contain several different files depending on the current version of StrikePoint.
+This approach is sometimes referred to as "vibe coding." For me, the project was an opportunity to learn how AI can be used during the development of an actual application rather than just using it for small pieces of code.
 
-Typical parts of the project include:
+I still had to decide what I wanted the game to do, test the results, find problems, and determine what should be changed.
 
-* **HTML** — Structure of the website and game interface
-* **CSS** — Styling, layout, colors, animations, and visual design
-* **JavaScript** — Game logic, controls, shooting mechanics, scoring, and interactive systems
-* **Assets** — Images, sounds, icons, or other resources used by the game
-* **Configuration files** — Files required for deployment and project configuration
+## AI Models Used
 
-The structure may change as StrikePoint continues to receive updates.
+I used two AI models during the development of StrikePoint.
 
----
+### DeepSeek V4 Flash
 
-#  Gameplay
+DeepSeek V4 Flash was the main AI model I used during development.
 
-StrikePoint is designed around short gameplay sessions.
+I used it for a large portion of the coding process, including creating systems, modifying existing code, debugging, and explaining programming concepts.
 
-Players can enter the game, begin a round, and focus on hitting targets and achieving the highest score possible.
+### GLM-5.3-Flash
 
-The game is intended to emphasize:
+GLM-5.3-Flash from Z.AI was used as a secondary AI model.
 
-* Reaction speed
-* Accuracy
-* Fast decision-making
-* Score improvement
-* Replayability
+I used it alongside my main model to get alternative solutions, test different approaches, and help with development when I needed another perspective.
 
-The goal is to make each round quick enough that players can immediately try again after finishing.
+## Inspiration
 
----
+StrikePoint is heavily inspired by the competitive FPS games that I enjoy playing.
 
-# 🚀 Future Plans
+Some of the biggest influences on the project are:
 
-StrikePoint is still a learning project, so there are many features that could potentially be added in the future.
+* VALORANT
+* Counter-Strike 2
 
-Possible improvements include:
+These games influenced different parts of StrikePoint, including the tactical round structure, team-based objectives, economy and buy system, bomb objective, HUD layout, and overall competitive FPS design.
 
-* 🏆 High-score system
-* 📊 Detailed player statistics
-* 🎯 Different target types
-* 🔫 Multiple weapons
-* 🗺️ Different maps or environments
-* ⏱️ Time-based game modes
-* 🎮 Additional game modes
-* 🔊 Sound effects
-* 🎵 Background music
-* ✨ Better visual effects
-* 💥 Shooting animations
-* 🏅 Achievements
-* 🌎 Online leaderboards
-* 📱 Better mobile support
-* ⚙️ Graphics and performance settings
-* 🎨 More customization options
+StrikePoint is not intended to reproduce either game. Instead, I used elements that I liked from those games as inspiration while experimenting with my own implementation.
 
-Not every planned feature is guaranteed to be added. The project will continue to evolve as I learn more about programming and game development.
+## Development
 
----
+StrikePoint is currently built as a browser game using HTML, CSS, and JavaScript, with a 3D game environment and rendering system.
 
-# 📚 What I Learned
+A large portion of the project is contained within a single HTML file. This was intentional because it makes the project easier for me to develop, test, and deploy while I am learning.
 
-One of the biggest purposes of StrikePoint was learning.
+The project contains systems for:
 
-While working on the project, I gained more experience with:
+* Player movement
+* Camera controls
+* Weapons
+* Shooting
+* AI players
+* Round management
+* Game modes
+* Economy
+* Buying
+* Bomb objectives
+* HUD
+* Radar
+* Scoreboard
+* Settings
+* Performance management
+* Key rebinding
+* Visual effects
+* Audio
+* Menus
 
-* Programming fundamentals
-* Web development
-* Game development
-* JavaScript
-* HTML and CSS
-* Debugging
-* Git and GitHub
-* Deployment
-* AI-assisted programming
-* Software development workflows
-* Breaking large problems into smaller tasks
-* Testing and improving code
+## Deployment
 
-More importantly, the project helped me understand that using AI for programming still requires the developer to understand what the code is doing, test it, identify problems, and make decisions about how the final application should work.
+The plan is to publish StrikePoint as a web application so that players can access it directly through a browser.
 
----
+I plan to use GitHub to store and manage the source code and Render to deploy the game.
 
-# 🧪 Project Status
+The basic deployment workflow will be:
 
-**Current Status:** 🚧 In Development
+GitHub → Render → Web Browser
 
-StrikePoint is currently being developed and tested.
+Using this setup will allow me to continue updating the game through the GitHub repository while having a publicly accessible version hosted through Render.
 
-Features may change during development as I experiment with different gameplay mechanics, visual designs, and programming techniques.
+## Project Status
 
-The project will be considered ready for a public release once the core gameplay, performance, deployment, and user experience have reached a stable state.
+StrikePoint is currently in development.
 
----
+The main gameplay systems are being developed and tested, but the project is still being improved. Features, balancing, visuals, performance, and gameplay mechanics may continue to change as development progresses.
 
-# 🌎 Publishing
+## Future Plans
 
-Once StrikePoint is ready, the project will be published online using **Render**.
+Some features I may add or improve in future versions include:
 
-The source code will remain available through this GitHub repository, allowing other developers and learners to look at the project and see how it was created.
+* More weapons
+* More maps
+* Improved AI
+* Better weapon animations
+* Additional game modes
+* More detailed sound design
+* Improved visual effects
+* Better performance
+* More advanced team AI
+* Additional objectives
+* Improved matchmaking-style systems
+* More customization
+* More detailed statistics
+* Better mobile and lower-end hardware support
 
-The ultimate goal is to turn StrikePoint from a small learning experiment into a complete browser game that other people can actually play.
+## Goal of the Project
 
----
+The main goal of StrikePoint is not just to make a browser game.
 
-# ⚠️ Disclaimer
+I wanted to use the project as a way to learn how a larger game is structured and how different systems work together.
 
-StrikePoint is primarily a **learning and experimental project**.
+Building StrikePoint has allowed me to experiment with game development, JavaScript, 3D rendering, artificial intelligence, user interfaces, performance optimization, and deployment.
 
-The project was created to help me understand programming and AI-assisted development. Because of this, some parts of the project may change significantly over time as I learn new techniques and improve the code.
+It is also an experiment in how far I can take a project while working with AI as part of my development process.
 
----
+## License
 
-# 👨‍💻 Project Creator
-
-**StrikePoint** was created as a personal programming and game-development project.
-
-The project represents my experimentation with combining traditional programming with modern AI coding assistants.
-
----
-
-## ⭐ If You Like the Project
-
-If you enjoy StrikePoint or find the project interesting, consider giving the repository a ⭐ on GitHub.
-
-More updates and improvements will be added as development continues.
-
-**Thanks for checking out StrikePoint! 🎯**
+This project is a personal development and learning project. More information about licensing and use will be added as the project approaches a public release.
